@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n\n<div class=\"jumbotron\" style=\"background: white\">\n    <div class=\"container\">\n      <div class=\"row\" style=\"margin:auto\">\n        <div class=\"col-md-6 offset-md-3\">\n            \n          <div class = \"container-fluid\">\n              <h2>Book Details</h2>\n\n              <form #listingForm=\"ngForm\" *ngIf=\"!submitted\" (ngSubmit)=\"onSubmit()\" novalidate>\n              <!-- {{listingForm.value | json}} -->\n              \n                <div class=\"form-group\">\n                  <label class=\"center-block\">Book Name:</label>\n                    <input type=\"text\" #name=\"ngModel\" required \n                    [class.is-invalid]=\"name.invalid && name.touched\" class=\"form-control\" name=\"name\" [(ngModel)]=\"listingModel.name\">\n                  <small class=\"text-danger\" [class.d-none]=\"name.valid || name.untouched\">Name is required.</small>\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"center-block\">Author Name:</label>\n                      <input type=\"text\" #author=\"ngModel\" required \n                      [class.is-invalid]=\"author.invalid && author.touched\" class=\"form-control\" name=\"author\" [(ngModel)]=\"listingModel.author\">\n                    <small class=\"text-danger\" [class.d-none]=\"author.valid || author.untouched\">Author Name is required.</small>        \n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"center-block\">Image:</label>\n                      <input type=\"text\" #image=\"ngModel\" required \n                      [class.is-invalid]=\"image.invalid && image.touched\" class=\"form-control\" name=\"image\" [(ngModel)]=\"listingModel.image\">\n                    <small class=\"text-danger\" [class.d-none]=\"image.valid || image.untouched\">Please enter image URL.</small>        \n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"center-block\">Price:</label>\n                      <input type=\"text\" #price=\"ngModel\" required \n                      [class.is-invalid]=\"price.invalid && price.touched\" class=\"form-control\" name=\"price\" [(ngModel)]=\"listingModel.price\">\n                    <small class=\"text-danger\" [class.d-none]=\"price.valid || price.untouched\">Price is required</small>        \n                </div>\n\n              \n                <!-- <div class=\"form-group\">\n                    <select class=\"custom-select\">\n                      <option selected>Condition</option>\n                      <option *ngFor=\"let value of cndition\">{{value}}</option>\n                    </select>\n                </div> -->\n\n                <div class=\"form-group mb-3\">\n                    <label class=\"center-block\">Condition:</label>\n                      <div class=\"form-check\">\n                        <input class=\"form-check-input\" #cndition=\"ngModel\" required type=\"radio\" name=\"cndition\" value=\"New\" [(ngModel)]=\"listingModel.cndition\">\n                        <label class=\"form-check-label\">New</label>\n                      </div>\n                      <div class=\"form-check\">\n                        <input class=\"form-check-input\" #cndition=\"ngModel\" required type=\"radio\" name=\"cndition\" value=\"Almost New\" [(ngModel)]=\"listingModel.cndition\">\n                        <label class=\"form-check-label\">Almost New</label>\n                      </div>\n                      <div class=\"form-check\">\n                        <input class=\"form-check-input\" #cndition=\"ngModel\" required type=\"radio\" name=\"cndition\" value=\"Slightly Damaged\" [(ngModel)]=\"listingModel.cndition\">\n                        <label class=\"form-check-label\">Slightly Damaged</label>\n                      </div>\n                      <div class=\"form-check\">\n                        <input class=\"form-check-input\" #cndition=\"ngModel\" required type=\"radio\" name=\"cndition\" value=\"Worn\" [(ngModel)]=\"listingModel.cndition\">\n                        <label class=\"form-check-label\">Worn</label>\n                      </div>\n                    <small class=\"text-danger\" [class.d-none]=\"cndition.valid || cndition.untouched\">Please specify book condition.</small>\n                </div>\n\n              <button  [disabled]=\"listingFrom.form.invalid\" class=\"btn btn-primary\">Add</button>\n            </form>\n\n            <div class=\"alert alert-danger\" *ngIf=\"errorMsg\">\n                {{errorMsg}}\n            </div>\n\n          </div>\n\n\n        </div>\n      </div>\n    </div>\n  </div>\n\n\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n\n<div class=\"jumbotron\" style=\"background: white\">\n    <div class=\"container\">\n      <div class=\"row\" style=\"margin:auto\">\n        <div class=\"col-md-6 offset-md-3\">\n            \n          <div class = \"container-fluid\">\n              <h2>Book Details</h2>\n\n              <form #listingForm=\"ngForm\" *ngIf=\"!submitted\" (ngSubmit)=\"onSubmit()\" novalidate>\n              <!-- {{listingForm.value | json}} -->\n              \n                <div class=\"form-group\">\n                  <label class=\"center-block\">Book Name:</label>\n                    <input type=\"text\" #name=\"ngModel\" required \n                    [class.is-invalid]=\"name.invalid && name.touched\" class=\"form-control\" name=\"name\" [(ngModel)]=\"listingModel.name\">\n                  <small class=\"text-danger\" [class.d-none]=\"name.valid || name.untouched\">Name is required.</small>\n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"center-block\">Author Name:</label>\n                      <input type=\"text\" #author=\"ngModel\" required \n                      [class.is-invalid]=\"author.invalid && author.touched\" class=\"form-control\" name=\"author\" [(ngModel)]=\"listingModel.author\">\n                    <small class=\"text-danger\" [class.d-none]=\"author.valid || author.untouched\">Author Name is required.</small>        \n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"center-block\">Image:</label>\n                      <input type=\"text\" #image=\"ngModel\" required \n                      [class.is-invalid]=\"image.invalid && image.touched\" class=\"form-control\" name=\"image\" [(ngModel)]=\"listingModel.image\">\n                    <small class=\"text-danger\" [class.d-none]=\"image.valid || image.untouched\">Please enter image URL.</small>        \n                </div>\n\n                <div class=\"form-group\">\n                    <label class=\"center-block\">Price:</label>\n                      <input type=\"text\" #price=\"ngModel\" required \n                      [class.is-invalid]=\"price.invalid && price.touched\" class=\"form-control\" name=\"price\" [(ngModel)]=\"listingModel.price\">\n                    <small class=\"text-danger\" [class.d-none]=\"price.valid || price.untouched\">Price is required</small>        \n                </div>\n\n              \n                <!-- <div class=\"form-group\">\n                    <select class=\"custom-select\">\n                      <option selected>Condition</option>\n                      <option *ngFor=\"let value of cndition\">{{value}}</option>\n                    </select>\n                </div> -->\n\n                <div class=\"form-group mb-3\">\n                    <label class=\"center-block\">Condition:</label>\n                      <div class=\"form-check\">\n                        <input class=\"form-check-input\" #cndition=\"ngModel\" required type=\"radio\" name=\"cndition\" value=\"New\" [(ngModel)]=\"listingModel.cndition\">\n                        <label class=\"form-check-label\">New</label>\n                      </div>\n                      <div class=\"form-check\">\n                        <input class=\"form-check-input\" #cndition=\"ngModel\" required type=\"radio\" name=\"cndition\" value=\"Almost New\" [(ngModel)]=\"listingModel.cndition\">\n                        <label class=\"form-check-label\">Almost New</label>\n                      </div>\n                      <div class=\"form-check\">\n                        <input class=\"form-check-input\" #cndition=\"ngModel\" required type=\"radio\" name=\"cndition\" value=\"Slightly Damaged\" [(ngModel)]=\"listingModel.cndition\">\n                        <label class=\"form-check-label\">Slightly Damaged</label>\n                      </div>\n                      <div class=\"form-check\">\n                        <input class=\"form-check-input\" #cndition=\"ngModel\" required type=\"radio\" name=\"cndition\" value=\"Worn\" [(ngModel)]=\"listingModel.cndition\">\n                        <label class=\"form-check-label\">Worn</label>\n                      </div>\n                    <small class=\"text-danger\" [class.d-none]=\"cndition.valid || cndition.untouched\">Please specify book condition.</small>\n                </div>\n\n              <button (click)=\"onSubmit()\" [disabled]=\"listingFrom.form.invalid\" class=\"btn btn-primary\">Add</button>\n            </form>\n\n            <div class=\"alert alert-danger\" *ngIf=\"errorMsg\">\n                {{errorMsg}}\n            </div>\n\n          </div>\n\n\n        </div>\n      </div>\n    </div>\n  </div>\n\n\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -59,6 +59,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _myservice_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../myservice.service */ "./src/app/myservice.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _book_book_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../book/book.component */ "./src/app/book/book.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -72,11 +73,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AddlistingComponent = /** @class */ (function () {
-    function AddlistingComponent(addbook) {
+    function AddlistingComponent(addbook, router) {
         this.addbook = addbook;
+        this.router = router;
         // cndition = ['New', 'Almost New', 'Slight Damage', 'Worn'];
-        this.listingModel = new _book_book_component__WEBPACK_IMPORTED_MODULE_3__["BookComponent"](null, null, null, null, null);
+        this.listingModel = new _book_book_component__WEBPACK_IMPORTED_MODULE_3__["BookComponent"](null, null, null, null, null, null);
         this.submitted = false;
         this.errorMsg = '';
         this.angularForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
@@ -94,6 +97,7 @@ var AddlistingComponent = /** @class */ (function () {
     AddlistingComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
+        this.listingModel.userid = localStorage.getItem('currentuid');
         this.addbook.addBook(this.listingModel)
             .subscribe(function (response) {
             console.log('Success!', response);
@@ -101,6 +105,7 @@ var AddlistingComponent = /** @class */ (function () {
         }, function (error) {
             _this.errorMsg = error.statusText;
         });
+        this.router.navigate(['/listings']);
     };
     AddlistingComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -108,7 +113,7 @@ var AddlistingComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./addlisting.component.html */ "./src/app/addlisting/addlisting.component.html"),
             styles: [__webpack_require__(/*! ./addlisting.component.css */ "./src/app/addlisting/addlisting.component.css")]
         }),
-        __metadata("design:paramtypes", [_myservice_service__WEBPACK_IMPORTED_MODULE_1__["MyserviceService"]])
+        __metadata("design:paramtypes", [_myservice_service__WEBPACK_IMPORTED_MODULE_1__["MyserviceService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], AddlistingComponent);
     return AddlistingComponent;
 }());
@@ -455,7 +460,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 var BookComponent = /** @class */ (function () {
-    function BookComponent(name, author, image, price, cndition) {
+    function BookComponent(userid, name, author, image, price, cndition) {
+        this.userid = userid;
         this.name = name;
         this.author = author;
         this.image = image;
@@ -470,7 +476,7 @@ var BookComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./book.component.html */ "./src/app/book/book.component.html"),
             styles: [__webpack_require__(/*! ./book.component.css */ "./src/app/book/book.component.css")]
         }),
-        __metadata("design:paramtypes", [String, String, String, Number, String])
+        __metadata("design:paramtypes", [String, String, String, String, Number, String])
     ], BookComponent);
     return BookComponent;
 }());
@@ -669,7 +675,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<br>\n<!-- <a routerLink=\"/listings\">Listings</a> -->\n\n<div class=\"jumbotron\" style=\"background: white\">\n    <div class=\"container\">\n      <div class=\"row\" style=\"margin:auto\">\n        <div class=\"col-md-6 offset-md-3\">\n              \n          <div class = \"container-fluid\">\n            <h2>Sign Up / Log In</h2>\n\n            <form #loginForm=\"ngForm\" *ngIf=\"!submitted\" (ngSubmit)=\"onSubmit()\" novalidate>\n\n              <!-- {{loginForm.value | json}} -->\n\n              <div class=\"form-group\">\n                <label class=\"center-block\">Email:</label>\n                  <input type=\"email\" #email=\"ngModel\" required \n                  [class.is-invalid]=\"email.invalid && email.touched\" class=\"form-control\" name=\"email\" [(ngModel)]=\"loginModel.email\">\n                  <small class=\"text-danger\" [class.d-none]=\"email.valid || email.untouched\">Email is required.</small>\n              </div>\n\n\n              <div class=\"form-group\">\n                <label class=\"center-block\">Password:</label>\n                  <input type=\"password\" #password=\"ngModel\" required \n                  [class.is-invalid]=\"password.invalid && password.touched\" class=\"form-control\" name=\"password\" [(ngModel)]=\"loginModel.password\">\n                  <small class=\"text-danger\" [class.d-none]=\"password.valid || password.untouched\">Password is required.</small>\n              </div>\n              <div class=\"d-flex justify-content-around\">\n                <button [disabled]=\"loginFrom.form.invalid\" class=\"btn btn-primary\"><i class=\"fas fa-sign-in-alt\"></i> LogIn</button>\n              </div>\n              <br>\n              <div class=\"d-flex justify-content-around\">\n                <span> New around here?\n              <button routerLink=\"/signup\" class=\"btn btn-link\">  <i class=\"fas fa-user-plus\"></i> SignUp</button>\n            </span>\n              </div>\n            </form>\n          </div>\n\n\n\n        </div>\n      </div>\n    </div>\n  </div>\n\n\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<br>\n<!-- <a routerLink=\"/listings\">Listings</a> -->\n\n<div class=\"jumbotron\" style=\"background: white\">\n    <div class=\"container\">\n      <div class=\"row\" style=\"margin:auto\">\n        <div class=\"col-md-6 offset-md-3\">\n              \n          <div class = \"container-fluid\">\n            <h2>Sign Up / Log In</h2>\n\n            <form #loginForm=\"ngForm\" *ngIf=\"!submitted\" (ngSubmit)=\"onSubmit()\" novalidate>\n\n              <!-- {{loginForm.value | json}} -->\n\n              <div class=\"form-group\">\n                <label class=\"center-block\">Email:</label>\n                  <input type=\"email\" #email=\"ngModel\" required \n                  [class.is-invalid]=\"email.invalid && email.touched\" class=\"form-control\" name=\"email\" [(ngModel)]=\"loginModel.email\">\n                  <small class=\"text-danger\" [class.d-none]=\"email.valid || email.untouched\">Email is required.</small>\n              </div>\n\n\n              <div class=\"form-group\">\n                <label class=\"center-block\">Password:</label>\n                  <input type=\"password\" #password=\"ngModel\" required \n                  [class.is-invalid]=\"password.invalid && password.touched\" class=\"form-control\" name=\"password\" [(ngModel)]=\"loginModel.password\">\n                  <small class=\"text-danger\" [class.d-none]=\"password.valid || password.untouched\">Password is required.</small>\n              </div>\n\n              <div class=\"alert alert-danger\" *ngIf=\"errorMsg\">\n                  {{errorMsg}}\n              </div>\n  \n              <div class=\"d-flex justify-content-around\">\n                <button [disabled]=\"loginFrom.form.invalid\" class=\"btn btn-primary\"><i class=\"fas fa-sign-in-alt\"></i> LogIn</button>\n              </div>\n              <br>\n              <div class=\"d-flex justify-content-around\">\n                <span> New around here?\n              <button routerLink=\"/signup\" class=\"btn btn-link\">  <i class=\"fas fa-user-plus\"></i> SignUp</button>\n            </span>\n              </div>\n            </form>\n          </div>\n\n\n\n        </div>\n      </div>\n    </div>\n  </div>\n\n\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -718,7 +724,7 @@ var HomeComponent = /** @class */ (function () {
         // console.log("login submit")
         var _this = this;
         // console.log(this.loginModel.email);
-        // console.log(this.loginModel.password);
+        //     console.log(this.loginModel.password);
         this.fetchuser.loginhelp(this.loginModel.email, this.loginModel.password);
         this.fetchuser.fetchuser()
             .subscribe(function (data) {
@@ -726,9 +732,15 @@ var HomeComponent = /** @class */ (function () {
             //      console.log("fetchuserservice");
             // console.log(typeof this.userdetails)
             // console.log(this.userdetails[0].id)
+            console.log(_this.userdetails);
+            if (_this.userdetails.length == 2) {
+                _this.errorMsg = "Email Id or password is incorrect.";
+            }
+            else {
+                _this.fetchuser.useridVal(_this.userdetails[0].id);
+                _this.router.navigate(['/listings']);
+            }
         });
-        this.fetchuser.useridVal(this.userdetails[0].id);
-        this.router.navigate(['/listings']);
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1283,7 +1295,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n\n\n<div class=\"row\" style=\"margin:auto; justify-content: center\">\n    <div *ngFor=\"let item of mylist\" class=\"col-sm-6 col-lg-4 col-xs-12 col-md-6 bi\">\n        <div style=\"justify-content: center\">\n            <div class=\"card-group\">\n                <div class=\"card-deck\">\n                    <div class=\"card\">\n                        <img class=\"card-block\" height=\"375px\" width=\"280px\" bind-src=\"item.image\" alt=\"Card image cap\">\n                        <div class=\"card-body flex-fill\">\n                            <h5 class=\"card-title\">{{item.bname}}</h5>\n                            <h6 class=\"card-subtitle mb-2 text-muted\">{{item.author}}</h6>\n                            <p class=\"card-text\">Price : {{item.price}}</p>\n                            <p class=\"card-text\">Condition : {{item.cndition}}</p>\n                            <button (click)=\"onSelect(item)\" [class.selected]=\"isSelected(item)\"><i class=\"fas fa-info-circle\"></i> Details</button>\n                            <!-- <button (click)=\"unwish(item)\" class=\"card-link\"><i class=\"far fa-grin-hearts\"></i>Remove from wishlist</button> -->\n                        </div>\n                        <div class=\"card-footer\">\n                            <small class=\"text-muted\">*Terms and Conditions apply <i class=\"far fa-check-square\"></i></small>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n\n\n<div class=\"row\" style=\"margin:auto; justify-content: center\">\n    <div *ngFor=\"let item of mylist\" class=\"col-sm-6 col-lg-4 col-xs-12 col-md-6 bi\">\n        <div style=\"justify-content: center\">\n            <div class=\"card-group\">\n                <div class=\"card-deck\">\n                    <div class=\"card\">\n                        <img class=\"card-block\" height=\"375px\" width=\"280px\" bind-src=\"item.image\" alt=\"Card image cap\">\n                        <div class=\"card-body flex-fill\">\n                            <h5 class=\"card-title\">{{item.bname}}</h5>\n                            <h6 class=\"card-subtitle mb-2 text-muted\">{{item.author}}</h6>\n                            <p class=\"card-text\">Price : {{item.price}}</p>\n                            <p class=\"card-text\">Condition : {{item.cndition}}</p>\n                            <button (click)=\"onSelect(item)\"><i class=\"fas fa-info-circle\"></i> Details</button>\n                            <!-- <button (click)=\"unwish(item)\" class=\"card-link\"><i class=\"far fa-grin-hearts\"></i>Remove from wishlist</button> -->\n                        </div>\n                        <div class=\"card-footer\">\n                            <small class=\"text-muted\">*Terms and Conditions apply <i class=\"far fa-check-square\"></i></small>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -1421,13 +1433,18 @@ var MyserviceService = /** @class */ (function () {
     MyserviceService.prototype.myrecmsgs = function () {
         return this.http.get(this.myrecmsgsurl + "?id=" + localStorage.getItem('currentuid'));
     };
+    // fetchuser(): Observable<any>{
+    //   let Params = new HttpParams();
+    //   Params = Params.append('email', this.email);
+    //   Params = Params.append('password', this.password);
+    //   console.log(this.password)
+    //   console.log(Params.get('password'))
+    //   // let params = new HttpParams().set('email', this.email);
+    //   // let params = new HttpParams().set('password', this.password);
+    //   return this.http.get(this.fetchurl, {params:Params})
+    // }
     MyserviceService.prototype.fetchuser = function () {
-        var Params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpParams"]();
-        Params = Params.append('email', this.email);
-        Params = Params.append('password', this.password);
-        // let params = new HttpParams().set('email', this.email);
-        // let params = new HttpParams().set('password', this.password);
-        return this.http.get(this.fetchurl, { params: Params });
+        return this.http.get(this.fetchurl + "?email=" + this.email + "&password=" + this.password);
     };
     MyserviceService.prototype.getwishlist = function () {
         return this.http.get(this.wishlisturl + "?id=" + localStorage.getItem('currentuid'));
@@ -2007,7 +2024,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"row\" style=\"margin:auto; justify-content: center\">\n    <div *ngFor=\"let item of wishlist\" class=\"col-sm-6 col-lg-4 col-xs-12 col-md-6 bi\">\n        <div style=\"justify-content: center\">\n            <div class=\"card-group\">\n                <div class=\"card-deck\">\n                    <div class=\"card\">\n                        <img class=\"card-block\" height=\"375px\" width=\"280px\" bind-src=\"item.image\" alt=\"Card image cap\">\n                        <div class=\"card-body flex-fill\">\n                            <h5 class=\"card-title\">{{item.bname}}</h5>\n                            <h6 class=\"card-subtitle mb-2 text-muted\">{{item.author}}</h6>\n                            <p class=\"card-text\">Price : {{item.price}}</p>\n                            <p class=\"card-text\">Condition : {{item.cndition}}</p>\n                            <button (click)=\"onSelect(item)\" [class.selected]=\"isSelected(item)\"><i class=\"fas fa-info-circle\"></i> Details</button>\n                            <!-- <button (click)=\"unwish(item)\" class=\"card-link\"><i class=\"far fa-grin-hearts\"></i>Remove from wishlist</button> -->\n                        </div>\n                        <div class=\"card-footer\">\n                            <small class=\"text-muted\">*Terms and Conditions apply <i class=\"far fa-check-square\"></i></small>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<app-footer></app-footer>"
+module.exports = "<app-navbar></app-navbar>\n<div class=\"row\" style=\"margin:auto; justify-content: center\">\n    <div *ngFor=\"let item of wishlist\" class=\"col-sm-6 col-lg-4 col-xs-12 col-md-6 bi\">\n        <div style=\"justify-content: center\">\n            <div class=\"card-group\">\n                <div class=\"card-deck\">\n                    <div class=\"card\">\n                        <img class=\"card-block\" height=\"375px\" width=\"280px\" bind-src=\"item.image\" alt=\"Card image cap\">\n                        <div class=\"card-body flex-fill\">\n                            <h5 class=\"card-title\">{{item.bname}}</h5>\n                            <h6 class=\"card-subtitle mb-2 text-muted\">{{item.author}}</h6>\n                            <p class=\"card-text\">Price : {{item.price}}</p>\n                            <p class=\"card-text\">Condition : {{item.cndition}}</p>\n                            <button (click)=\"isSelected(item)\"><i class=\"fas fa-info-circle\"></i> Details</button>\n                            <!-- <button (click)=\"unwish(item)\" class=\"card-link\"><i class=\"far fa-grin-hearts\"></i>Remove from wishlist</button> -->\n                        </div>\n                        <div class=\"card-footer\">\n                            <small class=\"text-muted\">*Terms and Conditions apply <i class=\"far fa-check-square\"></i></small>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<app-footer></app-footer>"
 
 /***/ }),
 

@@ -24,11 +24,13 @@ connection.query(
 connection.query(
     `CREATE TABLE IF NOT EXISTS books (
         id INTEGER AUTO_INCREMENT PRIMARY KEY,
+        userid INTEGER NOT NULL,
         bname VARCHAR(50) NOT NULL,
         author VARCHAR(50) NOT NULL,
         image LONGTEXT NOT NULL,
         price INTEGER NOT NULL,
-        cndition VARCHAR(20) NOT NULL
+        cndition VARCHAR(20) NOT NULL,
+        FOREIGN KEY (userid) REFERENCES users(id)
     );`,
     function(err, results) {
         if (err) {
@@ -40,23 +42,23 @@ connection.query(
     }
 )
 
-connection.query(
-    `CREATE TABLE IF NOT EXISTS listings (
-        itemid INTEGER AUTO_INCREMENT PRIMARY KEY,
-        userid INTEGER NOT NULL,
-        bookid INTEGER NOT NULL,
-        FOREIGN KEY (userid) REFERENCES users(id),
-        FOREIGN KEY (bookid) REFERENCES books(id)
-    );`,
-    function(err, results) {
-        if (err) {
-            console.error(err)
-        } else {
-            console.log("Table created successfully")
-        }
-//        connection.close();
-    }
-)
+// connection.query(
+//     `CREATE TABLE IF NOT EXISTS listings (
+//         itemid INTEGER AUTO_INCREMENT PRIMARY KEY,
+//         userid INTEGER NOT NULL,
+//         bookid INTEGER NOT NULL,
+//         FOREIGN KEY (userid) REFERENCES users(id),
+//         FOREIGN KEY (bookid) REFERENCES books(id)
+//     );`,
+//     function(err, results) {
+//         if (err) {
+//             console.error(err)
+//         } else {
+//             console.log("Table created successfully")
+//         }
+// //        connection.close();
+//     }
+// )
 
 connection.query(
     `CREATE TABLE IF NOT EXISTS wishlist (

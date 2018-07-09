@@ -39,7 +39,10 @@ app.listen(8000, () => {
 
 app.get('/myrecmsgs',function(req,res){
   let userid = req.query.id;
-  let query  = `select * from messages as m inner join users as u where m.receiverid = ${userid} and u.id=m.senderid;`
+  let query  = `select * from messages as m 
+    inner join users as u 
+    where m.receiverid = ${userid} 
+    and u.id=m.senderid;`
   console.log(query);
   //let userid = req.session.id;
   
@@ -67,7 +70,10 @@ app.get('/myrecmsgs',function(req,res){
 
 app.get('/mysentmsgs',function(req,res){
   let userid = req.query.id;
-  let query  = `select * from messages as m inner join users as u where m.senderid = ${userid} and u.id=m.receiverid;`
+  let query  = `select * from messages as m 
+    inner join users as u 
+    where m.senderid = ${userid} 
+    and u.id=m.receiverid;`
   console.log(query);
   //let userid = req.session.id;
   
@@ -100,7 +106,9 @@ app.post('/addmsg', function(req, res) {
   let data = Object.values(req.body);
   console.log(data);
 
-  let query = `insert into messages (senderid, receiverid, bookid, msg) values (?,?,?,?);`
+  let query = `insert into messages 
+    (senderid, receiverid, bookid, msg) 
+    values (?,?,?,?);`
   console.log(query);
 
   connection.query(query, data, function(error, result){
@@ -125,7 +133,8 @@ app.post('/addmsg', function(req, res) {
 
 app.get('/mylistdata',function(req,res){
   let userid = req.query.id;
-  let query  = `select * from books as b inner join listings as l on l.bookid = b.id where l.userid = ${userid};`
+  let query  = `select * from books  
+    where userid = ${userid};`
   console.log(query);
   //let userid = req.session.id;
   
@@ -154,7 +163,10 @@ app.get('/mylistdata',function(req,res){
 
 app.get('/wishlistdata',function(req,res){
   let userid = req.query.id;
-  let query  = `select * from books as b inner join wishlist as w on w.bookid = b.id where w.userid = ${userid};`
+  let query  = `select * from books as b 
+    inner join wishlist as w 
+    on w.bookid = b.id 
+    where w.userid = ${userid};`
   console.log(query);
   //let userid = req.session.id;
   
@@ -187,7 +199,8 @@ app.post('/addwish', function(req, res) {
   let data = Object.values(req.body);
   console.log(data);
 
-  let query = `insert into wishlist (userid, bookid) values (?,?);`
+  let query = `insert into wishlist  
+    (userid, bookid) values (?,?);`
   console.log(query);
 
   connection.query(query, data, function(error, result){
@@ -209,12 +222,13 @@ app.post('/addwish', function(req, res) {
 
 app.get('/fetch',function(req,res){
   //  res.json("Yes");
-    let email = req.param('email');
-//    let password = req.query.pasword;
-  
+    // let email = req.param('email');
+    // let password = req.param('pasword');
+    let email = req.query.email;
+    let password = req.query.password;
     let query = `select * from users 
-    where users.email ="${email}";`
-//    and users.password = ${password};`
+    where users.email ='${email}'
+    and users.password = '${password}';`
   
     console.log(query);
     connection.query(query, function(error, result){
@@ -225,6 +239,7 @@ app.get('/fetch',function(req,res){
         res.json(obj);
       } else if (result[0] == null) {
           console.log("No ");
+          console.log(result[0]);
           var obj = { status: 400, message: 'Oops ! .' };
           res.json(obj);
       } else {
@@ -243,11 +258,9 @@ app.get('/detail',function(req,res){
 //  let query  = `select * from books where id=${id};`
 
   let query = `select * from books as b 
-    inner join listings as l 
-    on b.id = l.bookid 
     inner join users as u 
-    on u.id = l.userid 
-    where u.id = 2 and l.bookid = ${id};`
+    on u.id = b.userid 
+    where b.bookid = ${id};`
 
 
   console.log(query);
@@ -296,8 +309,9 @@ app.post('/addbook', function(req, res) {
   console.log(req.body);
   let data = Object.values(req.body);
   console.log(data);
-
-  let query = `insert into books (name, author, image, price, cndition) values (?,?,?,?,?);`
+  let query = `insert into books 
+    (userid, bname, author, image, price, cndition) 
+    values (?,?,?,?,?,?);`
   console.log(query);
   
   connection.query(query, data, function(error, result){
@@ -311,16 +325,17 @@ app.post('/addbook', function(req, res) {
       console.log(result);
 //      res.send("200");}
     }   
-
 //    res.status(200).send({"message": "Data received"});
-});
+  });
 
 app.post('/adduser', function(req, res) {
   console.log(req.body);
   let data = Object.values(req.body);
   console.log(data);
 
-  let query = `insert into users (name, email, password, address, contact) values (?,?,?,?,?);`
+  let query = `insert into users 
+    (name, email, password, address, contact) 
+    values (?,?,?,?,?);`
   console.log(query);
   connection.query(query, data, function(error, result){
 
