@@ -29,25 +29,15 @@ app.listen(8000, () => {
   console.log('Server started!');
 });
 
-  
-// app.get('/home',function(req,res){
-//   res.send("It works");
-// });
-
-// select * from messages as m inner join users as u where (m.senderid = 1 and u.id=m.receiverid) or (m.receiverid = 1 and u.id=m.senderid);
-//) or (m.receiverid = ${userid} and u.id=senderid)
-
 app.get('/myrecmsgs',function(req,res){
   let userid = req.query.id;
   let query  = `select * from messages as m 
     inner join users as u 
     where m.receiverid = ${userid} 
     and u.id=m.senderid;`
-  console.log(query);
-  //let userid = req.session.id;
+  console.log(query + "12321");
   
   connection.query(query, [userid] , function(error, result){
-    //console.log(query);
     console.log(result);
     if(error){
       console.log(error);
@@ -58,12 +48,9 @@ app.get('/myrecmsgs',function(req,res){
         var obj = { status: 400, message: 'Oops ! .' };
         res.json(obj);
     } else {
-        //console.log(result);
-        //var obj = { status: 200, message: 'Successfull', data: result };
         var obj = result;
-        res.json(obj); //Successfull
+        res.json(obj);
     }
-  
   })
 });
 
@@ -168,10 +155,8 @@ app.get('/wishlistdata',function(req,res){
     on w.bookid = b.id 
     where w.userid = ${userid};`
   console.log(query);
-  //let userid = req.session.id;
   
   connection.query(query, [userid] , function(error, result){
-    //console.log(query);
     console.log(result);
     if(error){
       console.log(error);
@@ -182,8 +167,6 @@ app.get('/wishlistdata',function(req,res){
         var obj = { status: 400, message: 'Oops ! .' };
         res.json(obj);
     } else {
-        //console.log(result);
-        //var obj = { status: 200, message: 'Successfull', data: result };
         var obj = result;
         res.json(obj); //Successfull
     }
@@ -212,7 +195,6 @@ app.post('/addwish', function(req, res) {
     else
     {  
       console.log(result);
-    //      res.send("200");}
     }   
   })
  res.status(200).send({"message": "Data received"});
@@ -221,9 +203,6 @@ app.post('/addwish', function(req, res) {
 
 
 app.get('/fetch',function(req,res){
-  //  res.json("Yes");
-    // let email = req.param('email');
-    // let password = req.param('pasword');
     let email = req.query.email;
     let password = req.query.password;
     let query = `select * from users 
@@ -253,9 +232,7 @@ app.get('/fetch',function(req,res){
 
 
 app.get('/detail',function(req,res){
-//  res.json("Yes");
   let id = req.query.id;
-//  let query  = `select * from books where id=${id};`
 
   let query = `select * from books as b 
     inner join users as u 
@@ -351,20 +328,10 @@ app.post('/adduser', function(req, res) {
   })
 //  res.status(200).send({"message": "Data received"});
 });
+  
 
-
-
-
-// app.get('/detail', function(req, res){
-//   let no = req.query.id;
-//   let url = "localhost:8000/detail/"+no;
-//   request(url, function(error, response, body){
-//     if(!error && response.statusCode==200){
-//       let data = JSON.parse(body)
-//       res.json(data);
-//     }  
-//   });
-// });
-// })
+app.post('/test', function(req, res) {
+  res.send('this is a test');
+}
 
 });
